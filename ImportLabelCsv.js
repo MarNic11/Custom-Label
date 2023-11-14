@@ -16,6 +16,7 @@ export default class ImportLabelCsv extends LightningElement {
 
     handleFilesChange(event) {
         console.log('[JS] ImportLabelCsv handleFilesChange [START]');
+        
         this.filesUploaded = event.target.files;
         if(this.filesUploaded[0].size > this.MAX_FILE_SIZE){
             this.fileName = 'File size is too large!';

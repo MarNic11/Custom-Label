@@ -1,0 +1,19 @@
+<template>
+    <template if:true={showLoadingSpinner}>
+        <div class="contentClass">
+            <lightning-spinner alternative-text="Loading......" size="medium" class="contentClass"></lightning-spinner>
+        </div>
+    </template>
+
+    <lightning-card title="Import CSV Data in Lightning Web Components for Custom Label" icon-name="doctype:csv">
+        <div class="slds-align_absolute-center">
+            <lightning-input label="" name="file uploader" onchange={handleFilesChange} type="file" accept=".csv" multiple="false"></lightning-input>
+        </div><br/>
+        <div class="slds-text-body_small slds-text-color_error slds-align_absolute-center">{fileName}</div><br/>
+
+        <div class="slds-m-top_small slds-align_absolute-center">
+            <lightning-button label="Insert Custom Labels" onclick={handleSave} variant="brand" disabled={isTrue}></lightning-button>
+            <lightning-button variant="brand" label="Download CSV Header" icon-position="right" icon-name="utility:download" onclick={downloadClick} class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </lightning-card>
+</template>
